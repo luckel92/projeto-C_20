@@ -22,7 +22,7 @@ function setup(){
   
   createCanvas(windowWidth, windowHeight);
 // Movendo plano de fundo
-path=createSprite(200,200);
+path=createSprite(200,600);
 path.addImage(pathImg);
 path.velocityY = 4;
 
@@ -30,8 +30,9 @@ path.velocityY = 4;
 //criar menino correndo 
 boy = createSprite(70,height -100,20,20);
 boy.addAnimation("SahilRunning",boyImg);
-boy.scale=0.08;
+boy.scale=0.1;
   
+createCanvas(windowWidth,windowHeight)
   
 cashG=new Group();
 diamondsG=new Group();
@@ -50,8 +51,8 @@ function draw() {
   boy.collide(edges);
   
   //código para redefinir plano de fundo
-  if(path.y > 400 ){
-    path.y = height/2;
+  if(path.y > 600 ){
+    path.y = height/4;
   }
   
     createCash();
@@ -125,7 +126,7 @@ function createDiamonds() {
 
 function createJwellery() {
   if (World.frameCount % 410 == 0) {
-  var jwellery = createSprite(Math.round(random(50, width -100),40, 10, 10));
+    var jwellery = createSprite(Math.round(random(50, width -100),40, 10, 10));
   jwellery.addImage(jwelleryImg);
   jwellery.scale=0.13;
   jwellery.velocityY = 3;
@@ -136,7 +137,7 @@ function createJwellery() {
 
 function createSword(){
   if (World.frameCount % 530 == 0) {
-  var sword = createSprite(Math.round(random(50, width -100),40, 10, 10));
+    var sword = createSprite(Math.round(random(50, width -100),40, 10, 10));
   sword.addImage(swordImg);
   sword.scale=0.1;
   sword.velocityY = 3;
